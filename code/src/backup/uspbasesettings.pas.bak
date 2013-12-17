@@ -1,0 +1,175 @@
+unit uSPBaseSettings;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils;
+
+type
+
+  { TSPBaseSettings }
+
+  TSPBaseSettings = class(TObject)
+  private
+    FInitialised : boolean;
+    FProductVersion : string;
+    FProductVersionID : integer;
+    FinternalName : string;
+    FFullProductName : string;
+    FLogFileName : string;
+    FProductDescription : string;
+  protected
+    _Instance : TSPBaseSettings; static;
+    {%H-}constructor Create;
+    function GetFullProductName : string; virtual;
+    function GetInternalName : string; virtual;
+    function GetLogFileName : string;virtual;
+    function GetProductDescription : string; virtual;
+    function GetProductVersion : string; virtual;
+    function GetProductVersionID : integer; virtual;
+    procedure SetFullProductName(AValue : string); virtual;
+    procedure SetInternalName(AValue : string); virtual;
+    procedure SetLogFileName(AValue : string); virtual;
+    procedure SetProductDescription(AValue : string); virtual;
+    procedure SetProductVersion(AValue : string); virtual;
+    procedure SetProductVersionID(AValue : integer); virtual;
+    procedure DebugSettingsStartup; virtual; abstract;
+
+  public
+    //used in GUI e.g. aboutboc
+    property FullProductName : string read GetFullProductName write SetFullProductName;
+    //used to switch help urls
+    property InternalName : string read GetInternalName write SetInternalName;
+    //used to display a user friendly version
+    property ProductVersion : string read GetProductVersion write SetProductVersion;
+    //used to check for updates
+    property ProductVersionID : integer read GetProductVersionID write SetProductVersionID;
+    //description test used in gui
+    property ProductDescription : string read GetProductDescription write SetProductDescription;
+    //Filename used to store log file name
+    property LogFileName : string read GetLogFileName write SetLogFileName;
+    //const and dest
+    destructor Destroy; override;
+    procedure Startup;
+  end;
+
+function SPBaseSettings : TSPBaseSettings;
+
+implementation
+
+uses ufrmLog;
+
+function SPBaseSettings : TSPBaseSettings;
+begin
+  Result := nil;
+  raise Exception.Create('Can''t create SPBaseSettings, it''s an abstract class');
+end;
+
+{ TSPBaseSettings }
+
+function TSPBaseSettings.GetFullProductName : string;
+begin
+  Result := FFullProductName;
+end;
+
+procedure TSPBaseSettings.SetFullProductName(AValue : string);
+begin
+  FFullProductName := AValue;
+end;
+
+destructor TSPBaseSettings.Destroy;
+begin
+  inherited Destroy;
+end;
+
+procedure TSPBaseSettings.Startup;
+var
+  rootConfigDir : String;
+  rootConfigFile : String;
+begin
+
+
+    rootConfigDir := GetAppConfigDir(false);
+    if not DirectoryExists(rootConfigDir) then
+      CreateDir(rootConfigDir);
+    rootConfigFile := Format('%ssettings.xml',[rootConfigDir]);
+    FLogFileName := Format('%s%s.log',[rootConfigDir,InternalName]);
+
+    Debug('=== %s %s ===',[FFullProductName, FProductVersion]);
+    Debug(FProductDescription);
+    Debug('Master config file: "%s"',[rootConfigFile]);
+
+    DebugSettingsStartup;
+
+    FInitialised := true;
+end;
+
+constructor TSPBaseSettings.Create;
+begin
+
+  FProductVersionID:=0000;
+  FProductVersion := 'v0.0.0 base-version 0';
+
+  FInitialised := false;
+end;
+
+function TSPBaseSettings.GetInternalName : string;
+begin
+  Result := FinternalName;
+end;
+
+function TSPBaseSettings.GetLogFileName : string;
+begin
+  Result := FLogFileName;
+end;
+
+function TSPBaseSettings.GetProductDescription : string;
+begin
+  Result := FProductDescription;
+end;
+
+function TSPBaseSettings.GetProductVersion : string;
+begin
+  Result := FProductVersion;
+end;
+
+function TSPBaseSettings.GetProductVersionID : integer;
+begin
+  Result := FProductVersionID;
+end;
+
+procedure TSPBaseSettings.SetInternalName(AValue : string);
+begin
+  FinternalName := AValue;
+end;
+
+procedure TSPBaseSettings.SetLogFileName(AValue : string);
+begin
+  FLogFileName := AValue;
+end;
+
+procedure TSPBaseSettings.SetProductDescription(AValue : string);
+begin
+  FProductDescription := AValue;
+end;
+
+procedure TSPBaseSettings.SetProductVersion(AValue : string);
+begin
+  FProductVersion := AValue;
+end;
+
+procedure TSPBaseSettings.SetProductVersionID(AValue : integer);
+begin
+  FProductVersionID := AValue;
+end;
+
+
+finalization
+
+if assigned(TSPBaseSettings._Instance) then
+  TSPBaseSettings._Instance.Free;
+
+end.
+

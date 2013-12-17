@@ -1,0 +1,48 @@
+unit uspbaseform;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs;
+
+type
+
+  { TSPBaseForm }
+
+  TSPBaseForm = class(TForm)
+  private
+    procedure EnsureFormIsVisibleOnScreen;
+  public
+    procedure AfterConstruction; override;
+  end;
+
+implementation
+
+
+procedure TSPBaseForm.EnsureFormIsVisibleOnScreen;
+var
+  currentMonitor: TMonitor;
+begin
+  currentMonitor := Screen.MonitorFromPoint(Point(Self.Left,Self.Top),TMonitorDefaultTo.mdNull);
+
+  //if on a valid monitor
+  if assigned(currentMonitor) then
+    Exit;
+
+  //if not on a valid monitor
+  aForm.Left := Screen.PrimaryMonitor.WorkareaRect.Left+5;
+  aForm.Top := Screen.PrimaryMonitor.WorkareaRect.Top+5;
+end;
+
+procedure TSPBaseForm.AfterConstruction;
+begin
+  EnsureFormIsVisibleOnScreen;
+  inherited AfterConstruction;
+end;
+
+{$R *.lfm}
+
+end.
+
