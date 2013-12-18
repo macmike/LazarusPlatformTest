@@ -10,6 +10,8 @@ A test app that gets platform details using [Lazarus](http://www.lazarus.freepas
 
 You can do anything you want with this application or it's source code. The idea behind this application is to record which platforms Lazarus apps run nicely on based on their configuration.
 
+Follow us on [twitter](https://twitter.com/softpractice)
+
 
 Terms and Conditions
 ====================
