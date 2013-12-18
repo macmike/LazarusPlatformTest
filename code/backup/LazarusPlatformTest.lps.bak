@@ -3,7 +3,7 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Release"/>
-    <Units Count="15">
+    <Units Count="16">
       <Unit0>
         <Filename Value="LazarusPlatformTest.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -11,7 +11,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="19" Y="18"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="34"/>
       </Unit0>
       <Unit1>
         <Filename Value="src/ufrmmain.pas"/>
@@ -20,12 +20,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ufrmMain"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="136"/>
-        <CursorPos X="51" Y="166"/>
-        <UsageCount Value="29"/>
+        <TopLine Value="24"/>
+        <CursorPos X="13" Y="27"/>
+        <UsageCount Value="34"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -36,11 +35,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ufrmLog"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
         <TopLine Value="181"/>
         <CursorPos X="68" Y="200"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="34"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -53,59 +52,62 @@
         <WindowIndex Value="0"/>
         <TopLine Value="14"/>
         <CursorPos X="1" Y="45"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="34"/>
       </Unit3>
       <Unit4>
         <Filename Value="src/uspbasesettings.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uSPBaseSettings"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
         <TopLine Value="76"/>
         <CursorPos X="1" Y="104"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="34"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="src/usettings.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uSettings"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
         <TopLine Value="14"/>
         <CursorPos X="1" Y="39"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="34"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="src/utils/uversioninfo.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uVersionInfo"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="src/utils/uosdetails.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uOSDetails"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="87"/>
-        <CursorPos X="81" Y="108"/>
-        <UsageCount Value="24"/>
+        <TopLine Value="78"/>
+        <CursorPos X="93" Y="95"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="src/utils/uwebutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uwebutils"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="52" Y="10"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -114,7 +116,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="252"/>
         <CursorPos X="1" Y="256"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit9>
       <Unit10>
         <Filename Value="../../SimpleSCM/code/src/usettings.pas"/>
@@ -122,16 +124,16 @@
         <WindowIndex Value="0"/>
         <TopLine Value="296"/>
         <CursorPos X="23" Y="276"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="10"/>
       </Unit10>
       <Unit11>
         <Filename Value="../../sp_common/utils/ucommonutils.pas"/>
         <UnitName Value="uCommonUtils"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="351"/>
         <CursorPos X="1" Y="351"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit11>
       <Unit12>
@@ -140,7 +142,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="169"/>
         <CursorPos X="11" Y="187"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit12>
       <Unit13>
         <Filename Value="/usr/share/fpcsrc/2.6.2/packages/fcl-res/src/resource.pp"/>
@@ -148,99 +150,153 @@
         <WindowIndex Value="0"/>
         <TopLine Value="400"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit13>
       <Unit14>
         <Filename Value="../../sp_common/utils/uprocessexecuter.pas"/>
         <UnitName Value="uProcessExecuter"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="272"/>
-        <CursorPos X="9" Y="294"/>
-        <UsageCount Value="12"/>
+        <TopLine Value="209"/>
+        <CursorPos X="57" Y="231"/>
+        <UsageCount Value="15"/>
         <Loaded Value="True"/>
       </Unit14>
+      <Unit15>
+        <Filename Value="../../../../../../lazarus/fpc/2.6.2/source/rtl/win/sysutils.pp"/>
+        <UnitName Value="sysutils"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="3" Y="48"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit15>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="19" HistoryIndex="18">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="112" Column="26" TopLine="79"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="155" Column="24" TopLine="137"/>
       </Position1>
       <Position2>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="112" Column="43" TopLine="79"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="144" Column="1" TopLine="137"/>
       </Position2>
       <Position3>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="113" Column="43" TopLine="80"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="146" Column="1" TopLine="137"/>
       </Position3>
       <Position4>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="112" Column="43" TopLine="79"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="58" Column="1" TopLine="49"/>
       </Position4>
       <Position5>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="113" Column="43" TopLine="80"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="59" Column="1" TopLine="49"/>
       </Position5>
       <Position6>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="114" Column="43" TopLine="81"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="60" Column="1" TopLine="49"/>
       </Position6>
       <Position7>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="115" Column="43" TopLine="82"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="61" Column="1" TopLine="49"/>
       </Position7>
       <Position8>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="116" Column="43" TopLine="83"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="23" Column="1" TopLine="14"/>
       </Position8>
       <Position9>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="115" Column="43" TopLine="82"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="24" Column="1" TopLine="14"/>
       </Position9>
       <Position10>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="116" Column="43" TopLine="83"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="25" Column="1" TopLine="14"/>
       </Position10>
       <Position11>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="117" Column="43" TopLine="84"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="28" Column="1" TopLine="14"/>
       </Position11>
       <Position12>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="27" Column="28" TopLine="12"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="29" Column="1" TopLine="14"/>
       </Position12>
       <Position13>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="73" Column="60" TopLine="51"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="32" Column="1" TopLine="16"/>
       </Position13>
       <Position14>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="85" Column="62" TopLine="85"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="34" Column="1" TopLine="18"/>
       </Position14>
       <Position15>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="80" Column="8" TopLine="78"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="35" Column="1" TopLine="19"/>
       </Position15>
       <Position16>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="81" Column="26" TopLine="79"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="156" Column="30" TopLine="142"/>
       </Position16>
       <Position17>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="79" Column="51" TopLine="55"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="158" Column="10" TopLine="135"/>
       </Position17>
       <Position18>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="37" Column="15" TopLine="20"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="154" Column="9" TopLine="141"/>
       </Position18>
       <Position19>
-        <Filename Value="src/ufrmmain.pas"/>
-        <Caret Line="91" Column="33" TopLine="40"/>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="153" Column="1" TopLine="141"/>
       </Position19>
+      <Position20>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="23" Column="1" TopLine="11"/>
+      </Position20>
+      <Position21>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="24" Column="1" TopLine="11"/>
+      </Position21>
+      <Position22>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="25" Column="1" TopLine="11"/>
+      </Position22>
+      <Position23>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="28" Column="1" TopLine="11"/>
+      </Position23>
+      <Position24>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="29" Column="1" TopLine="11"/>
+      </Position24>
+      <Position25>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="32" Column="1" TopLine="12"/>
+      </Position25>
+      <Position26>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="34" Column="1" TopLine="14"/>
+      </Position26>
+      <Position27>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="35" Column="1" TopLine="15"/>
+      </Position27>
+      <Position28>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="146" Column="8" TopLine="132"/>
+      </Position28>
+      <Position29>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="154" Column="35" TopLine="133"/>
+      </Position29>
+      <Position30>
+        <Filename Value="src/utils/uosdetails.pas"/>
+        <Caret Line="146" Column="1" TopLine="144"/>
+      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

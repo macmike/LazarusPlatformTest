@@ -17,7 +17,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <RevisionNr Value="1"/>
-      <BuildNr Value="5"/>
+      <BuildNr Value="6"/>
       <StringTable ProductName="LazarusPlatformTest" ProductVersion="0.0.1 "/>
     </VersionInfo>
     <BuildModes Count="2">
