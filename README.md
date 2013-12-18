@@ -4,8 +4,9 @@ Lazarus Platform Test
 A test app that gets platform details using [Lazarus](http://www.lazarus.freepascal.org) and can share them online. 
 
 - See the [results](http://soft-practice.com/lazarus-platform-tests "Platform Test results")
-- Clone the code with [SimpleGit ] (http://soft-practice.com/apps/simplegit)
-- Download a [binary and run the test] (https://github.com/macmike/LazarusPlatformTest/tree/master/code/bin)
+- Download a [binary and run the test] (https://github.com/macmike/LazarusPlatformTest/tree/master/release)
+- Clone the code with [SimpleGit](http://soft-practice.com/apps/simplegit) or some other means to build a new test release
+- Contact us via the [Lazarus forums](http://forum.lazarus.freepascal.org/index.php?action=pm;sa=send;u=45976) to get your release added to this repository, code patches or changes are welcome anyway you want
 
 You can do anything you want with this application or it's source code. The idea behind this application is to record which platforms Lazarus apps run nicely on based on their configuration.
 
