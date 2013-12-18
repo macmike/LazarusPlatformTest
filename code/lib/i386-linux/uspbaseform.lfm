@@ -1,8 +1,0 @@
-object SPBaseForm: TSPBaseForm
-  Left = 1722
-  Height = 240
-  Top = 251
-  Width = 320
-  Caption = 'SPBaseForm'
-  LCLVersion = '1.0.12.0'
-end

@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<CONFIG>
-  <Compiler Value="C:\lazarus\fpc\2.6.2\bin\i386-win32\fpc.exe" Date="1125668371"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -WG -vewnhi -FiC:\Users\mike\Dropbox\source\LazarusPlatformTest\code\lib\i386-win32 -FuC:\Users\mike\Dropbox\source\LazarusPlatformTest\code\src -FuC:\Users\mike\Dropbox\source\LazarusPlatformTest\code\src\forms -FuC:\Users\mike\Dropbox\source\LazarusPlatformTest -FuC:\Users\mike\Dropbox\source\LazarusPlatformTest\code\src\utils -FuC:\lazarus\lcl\units\i386-win32\win32 -FuC:\lazarus\lcl\units\i386-win32 -FuC:\lazarus\components\lazutils\lib\i386-win32 -FuC:\lazarus\packager\units\i386-win32 -FuC:\Users\mike\Dropbox\source\LazarusPlatformTest\code\ -FUC:\Users\mike\Dropbox\source\LazarusPlatformTest\code\lib\i386-win32\ -l -FEC:\Users\mike\Dropbox\source\LazarusPlatformTest\code\bin\ -dLCL -dLCLwin32 LazarusPlatformTest.lpr"/>
-</CONFIG>
