@@ -6,13 +6,13 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, ExtCtrls, Buttons;
+  ComCtrls, ExtCtrls, Buttons, uspbaseform;
 
 type
 
   { TfrmMain }
 
-  TfrmMain = class(TForm)
+  TfrmMain = class(TSPBaseForm)
     btnYes : TBitBtn;
     btnNo : TBitBtn;
     Label1 : TLabel;
@@ -41,6 +41,9 @@ type
 
 var
   frmMain : TfrmMain;
+
+const
+  STR_SERVER_TESTS_URL = 'http://soft-practice.com/lazarus-platform-tests';
 
 implementation
 
@@ -83,18 +86,18 @@ end;
 
 procedure TfrmMain.btnNoClick(Sender : TObject);
 begin
-  Debug('btnNo clicked');
+  Debug('btnNo clicked - sad :(');
 end;
 
 procedure TfrmMain.btnYesClick(Sender : TObject);
 begin
-  Debug('btnYes clicked');
+  Debug('btnYes clicked - yay :)');
   RegisterPlatformTest;
 end;
 
 procedure TfrmMain.lblSeeSharedInfoClick(Sender : TObject);
 begin
-  OpenURL('http://soft-practice.com/lazarus-platform-tests');
+  OpenURL(STR_SERVER_TESTS_URL);
 end;
 
 procedure TfrmMain.AddValue(const aName, aValue : string);
@@ -140,14 +143,18 @@ end;
 procedure TfrmMain.AddOSDetails;
 begin
   {$IFDEF MSWINDOWS}
+  FFullOSString := GetWindowsVer;
+  AddValue('Windows version',FFullOSString);
   {$ENDIF}
   {$IFDEF LINUX}
-
   FFullOSString := GetDistroDetails;
   AddValue('Linux distro',FFullOSString);
   AddValue('Kernel details',GetKernelDetails);
   {$ENDIF}
   {$IFDEF DARWIN}
+  FFullOSString := GetDistroDetails;
+  AddValue('Linux distro',FFullOSString);
+  AddValue('Kernel details',GetKernelDetails);
   {$ENDIF}
 
 end;
@@ -156,7 +163,7 @@ procedure TfrmMain.RegisterPlatformTest;
 var
   testURL : String;
 begin
-  testURL := format('http://www.soft-practice.com/sptools/platformtest.php?%s',[FPlatformTestInfo]);
+  testURL := format('%s?%s',[STR_SERVER_TESTS_URL,FPlatformTestInfo]);
   Debug('Registering platform test: %s',[testURL]);
   OpenURL(testURL);
 end;

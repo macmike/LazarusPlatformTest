@@ -7,8 +7,10 @@ interface
 uses
   Classes, SysUtils, process;
 
+function GetSourceOS : string;
 function GetKernelDetails : string;
 function GetDistroDetails : string;
+function GetWindowsVer : string;
 
 implementation
 
@@ -61,10 +63,27 @@ begin
   end;
 end;
 
+function GetSourceOS : string;
+begin
+  Result := '<unknown>';
+  {$IFDEF LINUX}
+  Result := 'Linux';
+  {$ENDIF}
+  {$IFDEF MSWINDOWS}
+  Result := 'Windows';
+  {$ENDIF}
+  {$IFDEF DARWIN}
+  Result := 'MacOS';
+  {$ENDIF}
+end;
+
 function GetKernelDetails : string;
 begin
   Result := '<unknown>';
   {$IFDEF LINUX}
+  Result := RunCommand('uname -srpv');
+  {$ENDIF}
+  {$IFDEF DARWIN}
   Result := RunCommand('uname -srpv');
   {$ENDIF}
 end;
@@ -84,7 +103,7 @@ begin
     for n := 0 to response.Count-1 do
     begin
       aLine := response[n];
-      if Pos('Description:',aLine)>0 then
+      if Pos('Description:',aLine)=1 then
       begin
         posColon := Pos(':',aLine);
         Delete(aLine,1,posColon+1);
@@ -96,7 +115,34 @@ begin
     response.Free;
   end;
   {$ENDIF}
+  {$IFDEF DARWIN}
+  response := TStringList.Create;
+  try
+    RunCommand('sw_vers',response);
+    for n := 0 to response.Count-1 do
+    begin
+      aLine := response[n];
+      if Pos('Product Version:',aLine)=1 then
+      begin
+        posColon := Pos(':',aLine);
+        Delete(aLine,1,posColon+1);
+        Result := Format('Mac OS X %s',[Trim(aLine)]);;
+        Exit;
+      end;
+    end;
+  finally
+    response.Free;
+  end;
+  {$ENDIF}
+
 end;
+
+function GetWindowsVer: string;
+begin
+  Result := RunCommand('ver');
+end;
+
+
 
 
 
