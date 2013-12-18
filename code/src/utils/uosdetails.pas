@@ -91,7 +91,7 @@ begin
 end;
 
 function GetDistroDetails : string;
-{$IFDEF LINUX or IFDEF DARWIN}
+{$IF defined(LINUX) or defined(DARWIN)}
 var
   response : TStringList;
   n : Integer;

@@ -91,7 +91,7 @@ begin
 end;
 
 function GetDistroDetails : string;
-{$IFDEF LINUX or IFDEF DARWIN}
+{$IFDEF LINUX or DARWIN}
 var
   response : TStringList;
   n : Integer;
@@ -160,8 +160,8 @@ begin
     '6.3' : Result := 'Windows 8.1';
   else
     Result := Format('Windows (%d.%d)',[Win32MajorVersion,Win32MinorVersion]);
-  {$ENDIF}
   end;
+  {$ENDIF}
 end;
 
 
