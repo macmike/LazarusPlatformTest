@@ -12,6 +12,8 @@ function GetKernelDetails : string;
 function GetDistroDetails : string;
 function GetWindowsVer : string;
 
+const STR_UNKNOWN = 'unknown';
+
 implementation
 
 function RunCommand(const cmd : string; const resultStr : TStringList) : integer;
@@ -65,7 +67,7 @@ end;
 
 function GetSourceOS : string;
 begin
-  Result := '<unknown>';
+  Result := STR_UNKNOWN;
   {$IFDEF LINUX}
   Result := 'Linux';
   {$ENDIF}
@@ -79,7 +81,7 @@ end;
 
 function GetKernelDetails : string;
 begin
-  Result := '<unknown>';
+  Result := STR_UNKNOWN;
   {$IFDEF LINUX}
   Result := RunCommand('uname -srpv');
   {$ENDIF}
@@ -89,13 +91,15 @@ begin
 end;
 
 function GetDistroDetails : string;
+{$IFDEF LINUX or IFDEF DARWIN}
 var
   response : TStringList;
   n : Integer;
   posColon : SizeInt;
   aLine : String;
+{$ENDIF}
 begin
-  Result := '<unknown>';
+  Result := STR_UNKNOWN;
   {$IFDEF LINUX}
   response := TStringList.Create;
   try
@@ -122,7 +126,7 @@ begin
     for n := 0 to response.Count-1 do
     begin
       aLine := response[n];
-      if Pos('Product Version:',aLine)=1 then
+      if Pos('ProductVersion:',aLine)=1 then
       begin
         posColon := Pos(':',aLine);
         Delete(aLine,1,posColon+1);
@@ -138,8 +142,26 @@ begin
 end;
 
 function GetWindowsVer: string;
+{$IFDEF MSWINDOWS}
+var
+  winVerString: String;
+{$ENDIF}
 begin
-  Result := RunCommand('ver');
+  Result := STR_UNKNOWN;
+  {$IFDEF MSWINDOWS}
+  winVerString := Format('%d.%d',[Win32MajorVersion,Win32MinorVersion]);
+  case winVerString of
+    '5.0' : Result := 'Windows 2000';
+    '5.1' : Result := 'Windows XP';
+    '5.2' : Result := 'Windows Server 2003';
+    '6.0' : Result := 'Windows Vista';
+    '6.1' : Result := 'Windows 7';
+    '6.2' : Result := 'Windows 8';
+    '6.3' : Result := 'Windows 8.1';
+  else
+    Result := Format('Windows (%d.%d)',[Win32MajorVersion,Win32MinorVersion]);
+  {$ENDIF}
+  end;
 end;
 
 

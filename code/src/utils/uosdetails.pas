@@ -160,8 +160,8 @@ begin
     '6.3' : Result := 'Windows 8.1';
   else
     Result := Format('Windows (%d.%d)',[Win32MajorVersion,Win32MinorVersion]);
-  {$ENDIF}
   end;
+  {$ENDIF}
 end;
 
 

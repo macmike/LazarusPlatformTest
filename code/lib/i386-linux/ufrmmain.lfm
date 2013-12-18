@@ -1,4 +1,4 @@
-object frmMain: TfrmMain
+inherited frmMain: TfrmMain
   Left = 1410
   Height = 644
   Top = 114
@@ -7,23 +7,22 @@ object frmMain: TfrmMain
   ClientHeight = 644
   ClientWidth = 797
   OnCreate = FormCreate
-  LCLVersion = '1.0.12.0'
-  object lblProductName: TLabel
+  object lblProductName: TLabel[0]
     Left = 8
-    Height = 16
+    Height = 17
     Top = 8
-    Width = 97
+    Width = 101
     Caption = 'lblProductName'
     ParentColor = False
   end
-  object StatusBar1: TStatusBar
+  object StatusBar1: TStatusBar[1]
     Left = 0
-    Height = 21
-    Top = 623
+    Height = 15
+    Top = 629
     Width = 797
     Panels = <>
   end
-  object mmValues: TMemo
+  object mmValues: TMemo[2]
     Left = 8
     Height = 481
     Top = 24
@@ -33,10 +32,10 @@ object frmMain: TfrmMain
     ScrollBars = ssAutoBoth
     TabOrder = 1
   end
-  object pnlShareInfo: TPanel
+  object pnlShareInfo: TPanel[3]
     Left = 0
     Height = 110
-    Top = 513
+    Top = 519
     Width = 797
     Align = alBottom
     BevelOuter = bvNone
@@ -45,17 +44,17 @@ object frmMain: TfrmMain
     TabOrder = 2
     object Label1: TLabel
       Left = 8
-      Height = 16
+      Height = 17
       Top = 7
-      Width = 174
+      Width = 182
       Caption = 'Would you like to share that:'
       ParentColor = False
     end
     object lblShareInfo: TLabel
       Left = 16
-      Height = 16
+      Height = 17
       Top = 31
-      Width = 73
+      Width = 76
       Caption = 'lblShareInfo'
       ParentColor = False
     end
@@ -86,9 +85,9 @@ object frmMain: TfrmMain
     object lblSeeSharedInfo: TLabel
       Cursor = crHandPoint
       Left = 8
-      Height = 16
+      Height = 17
       Top = 90
-      Width = 159
+      Width = 166
       Caption = 'See previously shared info'
       Font.Color = 11083801
       Font.Style = [fsUnderline]
